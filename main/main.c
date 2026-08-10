@@ -39,7 +39,7 @@ void uart1_to_uart2_task(void *arg)
 			printf("No data received on uart 2\n");
 		}
 		
-		vTaskDelay(pdMS_TO_TICKS(5000));
+		vTaskDelay(pdMS_TO_TICKS(1000));
 	}
 }
 
@@ -62,7 +62,7 @@ void uart2_to_uart1_task(void *arg)
 			printf("No data received on uart 1\n");
 		}
 		
-		vTaskDelay(pdMS_TO_TICKS(5000));
+		vTaskDelay(pdMS_TO_TICKS(1000));
 	}
 }
 
@@ -118,7 +118,7 @@ void app_main(void)
     // Start both communication tasks
     // --------------------------------------------------
     
-    //xTaskCreate(uart1_to_uart2_task, "uart1_to_uart2_task", 4096, NULL, 5, NULL);
+    xTaskCreate(uart1_to_uart2_task, "uart1_to_uart2_task", 4096, NULL, 5, NULL);
 	xTaskCreate(uart2_to_uart1_task, "uart2_to_uart1_task", 4096, NULL, 5, NULL);
 
 }
