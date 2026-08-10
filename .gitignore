@@ -1,3 +1,28 @@
+# ESP-IDF build output
 build/
-managed_components/
+
+# ESP-IDF generated files
+sdkconfig.old
+sdkconfig.defaults.old
+
+# CMake generated files
+cmake-build-*/
+
+# ESP-IDF managed components cache/generated files
 dependencies.lock
+
+# VS Code
+.vscode/
+
+# Eclipse / Eclipse-based IDE files
+.settings/
+.project
+.cproject
+
+# Temporary files
+*.tmp
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
